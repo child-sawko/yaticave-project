@@ -83,7 +83,7 @@ function format ($number)
 function timer()
 {
     $now = new DateTime('now');
-    $night = new DateTime('24:00:00');
+    $night = new DateTime('24:00');
     $interval = $now->diff($night);
     return $interval->format('%h:%i');
 }
