@@ -66,6 +66,27 @@ $information = [
         'url-img' => 'img/lot-6.jpg'
     ],
 ];
+function format ($number)
+{
+    $number = ceil($number);
+    if($number<1000)
+    {
+        $result = $number;
+    }
+    else
+    {
+        $result = number_format($number,0,","," ");
+    }
+    return $result.'<b class="rub">p</b>';
+}
+
+function timer()
+{
+    $now = new DateTime('now');
+    $night = new DateTime('24:00');
+    $interval = $now->diff($night);
+    return $interval->format('%h:%i');
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -116,7 +137,7 @@ $information = [
 
         <!---------------------------------------------------------------------------------->
 
-        </nav>
+
     </div>
 </header>
 
@@ -155,10 +176,10 @@ $information = [
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?=$in["price"]?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?=format($in["price"])?></span>
                         </div>
                         <div class="lot__timer timer">
-                            12:23
+                            <?=timer()?>
                         </div>
                     </div>
                 </div>
