@@ -1,8 +1,9 @@
 <?php
+require_once('data.php');
 $is_auth = rand(0, 1);
 
 $user_name = 'child-sawko'; // укажите здесь ваше имя
-$massiv_category = [
+/* $massiv_category = [
     [
         'eng' => 'boards',
         'rus' => 'Доски и лыжи',
@@ -27,8 +28,9 @@ $massiv_category = [
         'eng' => 'other',
         'rus' => 'Разное',
     ],
-];
-$information = [
+]; */
+
+/* $information = [
     [
         'name' => '2014 Rossignol District Snowboard',
         'category' => 'Доски и лыжи',
@@ -65,7 +67,7 @@ $information = [
         'price' => '5400',
         'url-img' => 'img/lot-6.jpg'
     ],
-];
+]; */
 function format ($number)
 {
     $number = ceil($number);

@@ -1,5 +1,7 @@
 
-
+-- База данных: `bd_yeticave`
+CREATE DATABASE IF NOT EXISTS `bd_yeticave` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `bd_yeticave`;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -62,8 +64,8 @@ CREATE TABLE `users` (
 
 ALTER TABLE `bid`
   ADD PRIMARY KEY (`id_bid`),
-  ADD KEY `id_user` (`id_user`),
-  ADD KEY `id_lot` (`id_lot`);
+  ADD KEY `id_lot` (`id_lot`,`id_user`),
+  ADD KEY `id_user` (`id_user`);
 
 
 -- Индексы таблицы `category`
@@ -76,9 +78,9 @@ ALTER TABLE `category`
 
 ALTER TABLE `lot`
   ADD PRIMARY KEY (`id_lot`,`id_winner`),
+  ADD KEY `id_winner` (`id_winner`,`id_user`,`id_category`),
   ADD KEY `id_user` (`id_user`),
-  ADD KEY `id_category` (`id_category`),
-  ADD KEY `id_winner` (`id_winner`);
+  ADD KEY `id_category` (`id_category`);
 
 
 -- Индексы таблицы `users`
@@ -100,7 +102,7 @@ ALTER TABLE `bid`
 -- AUTO_INCREMENT для таблицы `category`
 
 ALTER TABLE `category`
-  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 
 -- AUTO_INCREMENT для таблицы `lot`
@@ -130,8 +132,8 @@ ALTER TABLE `bid`
 
 ALTER TABLE `lot`
   ADD CONSTRAINT `lot_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `lot_ibfk_2` FOREIGN KEY (`id_category`) REFERENCES `category` (`id_category`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `lot_ibfk_3` FOREIGN KEY (`id_winner`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `lot_ibfk_2` FOREIGN KEY (`id_winner`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `lot_ibfk_3` FOREIGN KEY (`id_category`) REFERENCES `category` (`id_category`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

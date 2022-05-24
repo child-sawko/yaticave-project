@@ -60,10 +60,10 @@
     <nav class="nav">
         <ul class="nav__list container">
             <?php
-            foreach ($massiv_category as $mc)
+            foreach ($massiv_category as $category)
             {?>
                 <li class="nav__item">
-                    <a href="pages/all-lots.html"><?=$mc['rus']?></a>
+                    <a href="pages/all-lots.html"><?=$category['category_name']?></a>
                 </li>
                 <?php
 
