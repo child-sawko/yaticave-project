@@ -87,9 +87,17 @@ function timer()
     $now = new DateTime('now');
     $night = new DateTime('24:00');
     $interval = $now->diff($night);
-    return $interval->format('%h:%i');
+    if($interval ->format('%i')<10)
+    {
+        return $interval->format('%h:0%i');
+    }
+    else
+    {
+        return $interval->format('%h:%i');
+    }
 }
-function include_template($name, $data) {
+function include_template($name, $data)
+{
     $name = 'templates/' . $name;
     $result = '';
     if (!file_exists($name)) {
