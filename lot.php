@@ -2,7 +2,7 @@
 require_once ('functions.php');
 require_once ('data.php');
 
-$ID = $_GET['pages'];
+$ID = intval($_GET['pages']);
 
 $connection = new mysqli('127.0.0.1','root','','bd_yeticave');
 $query = "Select * from category order by id_category";
@@ -21,32 +21,33 @@ $query3 = "Select name,sum date
 $bid_result = $connection->query($query3);
 $bid = $bid_result->fetch_all(1);
 
-$page_content = include_template('lot.php',[
-    'massiv_category' => $massiv_category,
-    'information' => $information,
-    'ID' => $ID,
-    'category'=>$category,
-    'lot'=>$lot,
-    'bid'=>$bid
-] );
-
-$layout_content = include_template('layout.php', [
-    'page_content' => $page_content,
-    'massiv_category'=>$massiv_category,
-    'massiv_users'=>$massiv_users,
-    'title' => $lot["lot_name"],
-    'is_auth'=>$is_auth,
-    'user_name' => $user
-]);
-
-if((string)$ID == $lot['id_lot'])
+if(!empty($lot['id_lot']))
 {
+    $date_main = ['category'=>$category, 'lot'=>$lot,'bid'=>$bid];
+
+    $page_content = include_template("lot.php", $date_main);
+
+    $layout_content = include_template('layout.php', [
+        'page_content' => $page_content,
+        'massiv_category'=>$massiv_category,
+        'massiv_users' =>$massiv_users,
+        'title' => $lot["lot_name"],
+        'user_name' => $user
+    ]);
     print $layout_content;
+
 }
 else
 {
-    header("Location: 404.php");
+    $page_content = include_template("404.php",['category' => $category]);
+
+    $layout_content = include_template('layout.php', [
+        'page_content' => $page_content,
+        'massiv_category'=>$massiv_category,
+        'massiv_users' =>$massiv_users,
+        'title' => $lot["lot_name"],
+        'user_name' => $user
+    ]);
+    print $layout_content;
 }
-
-
 ?>

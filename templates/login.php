@@ -7,7 +7,7 @@
     </div>
     <div class="form__item form__item--last <?= $error['password'] ?? ""?>">
         <label for="password">Пароль <sup>*</sup></label>
-        <input id="password" type="password" name="pass" placeholder="Введите пароль" value="<?=$_POST['password'] ?? ""?>">
+        <input id="password" type="password" name="password" placeholder="Введите пароль" value="<?=$_POST['password'] ?? ""?>">
         <?= $message['password']  ?? ""?>
     </div>
     <?= $message['form'] ?? ""?>

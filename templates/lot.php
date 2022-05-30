@@ -3,10 +3,10 @@
     <div class="lot-item__content">
         <div class="lot-item__left">
             <div class="lot-item__image">
-                <img src="../img/<?=$lot["image_url"]?>" width="730" height="548" alt="Сноуборд">
+                <img src="../img/<?=$lot['image_url']?>" width="730" height="548">
             </div>
             <p class="lot-item__category">Категория: <span><?=$lot['lot_name']?></span></p>
-            <p class="lot-item__description"><?=$lot["description"]?></p>
+            <p class="lot-item__description"><?=$lot['description']?></p>
         </div>
         <div class="lot-item__right">
             <?php if(!empty($user))
@@ -14,7 +14,7 @@
                 <div class="lot-item__state">
                     <div class="lot-item__timer timer">
                         <?=timer()?>
-                        </div>
+                    </div>
                     <div class="lot-item__cost-state">
                         <div class="lot-item__rate">
                             <span class="lot-item__amount">Текущая цена</span>
@@ -22,7 +22,6 @@
                         </div>
                         <div class="lot-item__min-cost">
                             Мин. ставка <span>12 000 р</span>
-                        </div>
                         </div>
                     </div>
                     <form class="lot-item__form" action="https://echo.htmlacademy.ru" method="post" autocomplete="off">
@@ -34,7 +33,7 @@
                         <button type="submit" class="button">Сделать ставку</button>
                     </form>
                 </div>
-            <?php
+                <?php
             }
             ?>
             <div class="history">
