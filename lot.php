@@ -31,11 +31,12 @@ $page_content = include_template('lot.php',[
 ] );
 
 $layout_content = include_template('layout.php', [
-    'main' => $page_content,
+    'page_content' => $page_content,
     'massiv_category'=>$massiv_category,
+    'massiv_users'=>$massiv_users,
     'title' => $lot["lot_name"],
     'is_auth'=>$is_auth,
-    'user_name' => $user_name
+    'user_name' => $user
 ]);
 
 if((string)$ID == $lot['id_lot'])

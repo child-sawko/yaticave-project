@@ -5,6 +5,7 @@
     <title><?=$title?></title>
     <link href="../css/normalize.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/flatpickr.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="page-wrapper">
@@ -19,30 +20,41 @@
                 <input type="search" name="search" placeholder="Поиск лота">
                 <input class="main-header__search-btn" type="submit" name="find" value="Найти">
             </form>
-            <a class="main-header__add-lot button" href="pages/add-lot.html">Добавить лот</a>
+            <a class="main-header__add-lot button" href="add.php">Добавить лот</a>
 
             <!-- здесь должен быть PHP код для показа меню и данных пользователя ---------------->
 
             <nav class="user-menu">
                 <?php
-                if($is_auth == 1):
+                if($is_auth == 1)
+                {
                     ?>
                     <div class="user-menu__image">
-                        <img src="img/user.jpg" width="40" height="40" alt="Пользователь">
+                        <img src="../img/<?=$massiv_users[0]['avatar']?>" width="40" height="40" alt="Пользователь">
                     </div>
                     <div class="user-menu__logged">
-                        <p><?= $user_name ?></p>
+                        <p><?=$user_name?></p>
                     </div>
-                <?php else: ?>
+
+                    <div class="user-menu__logged">
+                        <a class="user-menu__logged" href="logout.php">ВЫХОД</a>
+                    </div>
+                <?php
+                }
+                else
+                {
+                 ?>
                     <ul class="user-menu__list">
                         <li class="user-menu__item">
                             <a href="#">Регистрация</a>
                         </li>
                         <li class="user-menu__item">
-                            <a href="#">Вход</a>
+                            <a href="login.php">Вход</a>
                         </li>
                     </ul>
-                <?php endif; ?>
+                <?php
+                }
+                ?>
             </nav>
 
             <!---------------------------------------------------------------------------------->
@@ -52,7 +64,21 @@
     </header>
 
     <main class="container">
-        <?=$main?>
+        <nav class="nav">
+            <ul class="nav__list container">
+                <?php
+                foreach($massiv_category as $category)
+                {
+                    ?>
+                    <li class="nav__item">
+                        <a href="pages/all-lots.html"><?=$category['category_name']?></a>
+                    </li>
+                    <?php
+                }
+                ?>
+            </ul>
+        </nav>
+        <?=$page_content?>
     </main>
 </div>
 

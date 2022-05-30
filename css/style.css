@@ -369,7 +369,6 @@ main.container {
 /* Навигация */
 
 .nav {
-  background-color: #ffffff;
   border-bottom: 1px solid #e1e6e7;
 }
 
@@ -384,6 +383,7 @@ main.container {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   list-style: none;
+  background-color: #ffffff;
 }
 
 .nav__item a {

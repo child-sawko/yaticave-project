@@ -7,12 +7,11 @@ $page_content = include_template('index.php', [
     'information' => $information,
 ]);
 $layout_content = include_template('layout.php', [
-    'main' => $page_content,
+    'page_content' => $page_content,
     'massiv_category' => $massiv_category,
+    'massiv_users' => $massiv_users,
     'title' => 'Главная страница',
-    'massiv_category' => $massiv_category,
-    'is_auth' => $is_auth,
-    'user_name' => $user_name,
+    'user_name' => $user,
 
 ]);
 print($layout_content);

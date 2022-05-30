@@ -20,7 +20,8 @@ CREATE TABLE `bid` (
 
 CREATE TABLE `category` (
                           `id_category` int(11) NOT NULL,
-                          `name` text NOT NULL
+                          `category_name` text NOT NULL,
+                            `category_name_eng` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 -- --------------------------------------------------------
 

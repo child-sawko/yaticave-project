@@ -25,7 +25,7 @@
             <!--заполните этот список из массива с товарами-->
             <li class="lots__item lot">
                 <div class="lot__image">
-                    <img src="<?=$inf['image_url']?>" width="350" height="260" alt="">
+                    <img src="../img/<?=$inf['image_url']?>" width="350" height="260" alt="">
                 </div>
                 <div class="lot__info">
                     <span class="lot__category"><?=$inf['category_name']?></span>
