@@ -52,8 +52,8 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 
         if(empty($result))
         {
-            $error['password'] = 'form__item--invalid';
-            $message['password'] = '<span class="form__error">Вы ввели неправильный пароль</span>';
+            $form = 'form--invalid';
+            $message['form'] = '<span class="form__error form__error--bottom">Вы ввели неправильную почту или пароль</span>';
             $flag = 1;
 
             $date_main = ['massiv_category' => $massiv_category, 'error' => $error, 'message' => $message, 'form' => $form,'user' => $user];
@@ -64,7 +64,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
                 'massiv_category' => $massiv_category,
                 'massiv_users' =>$massiv_users,
                 'title' => 'Вход',
-                'user_name' => $user
+                'user' => $user
             ]);
 
             print($layout_content);

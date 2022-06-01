@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="504a4c93-aece-4624-9b42-fda4b9af4845" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/404.php" beforeDir="false" afterPath="$PROJECT_DIR$/404.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.php" beforeDir="false" afterPath="$PROJECT_DIR$/data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/image_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/image_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/image_5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lot.php" beforeDir="false" afterPath="$PROJECT_DIR$/lot.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/123.jpg.crdownload" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/lot.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lot.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,6 +70,7 @@
       <workItem from="1653649045189" duration="1268000" />
       <workItem from="1653657988951" duration="2000" />
       <workItem from="1653893479386" duration="7386000" />
+      <workItem from="1654065730402" duration="2604000" />
     </task>
     <servers />
   </component>
